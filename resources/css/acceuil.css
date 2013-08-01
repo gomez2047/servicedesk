@@ -1,0 +1,226 @@
+/**
+ * Appcropolis Template: acceuil 
+ * @copy Appcropolis LLC (c) 2011-2013. All rights reserved.
+ * @author gomez2047 (support@appcropolis.com)
+ * @date 2013-07-22
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+ * SOFTWARE.
+ *
+ * License and legal information: 
+ *
+ * http://appcropolis.com/license/
+ * http://appcropolis.com/legal/
+ * http://appcropolis.com/privacy/
+ */
+
+
+/* global */
+
+
+
+/* header */
+/* part header & gray button*/
+
+#acceuil div[data-role="header"],
+#acceuil div[data-role="header"] a[data-role="button"][data-theme="reset"].ios.gray .ui-btn-inner {
+	color: #c8c8c8;
+	box-shadow: none;
+	background: #505050; /* Old browsers */
+	background: -moz-linear-gradient(top,  #505050 0%, #1b1b1b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#505050), color-stop(100%,#1b1b1b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #505050 0%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #505050 0%,#1b1b1b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #505050 0%,#1b1b1b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #505050 0%,#1b1b1b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#505050', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+	}
+
+#acceuil div[data-role="header"] a[data-role="button"][data-theme="reset"].ios.back-button .ui-btn-inner:after {
+	background-image: -webkit-linear-gradient(top,  #505050 0%,#1b1b1b 100%);
+	text-shadow: none;
+	}
+
+#acceuil div[data-role="header"] a[data-role="button"][data-theme="reset"].ios.back-button .ui-btn-inner:before {
+	text-shadow: -1px 0px  0px #1c1c1c;
+	}
+	
+	
+#acceuil div[data-role="header"] .ui-icon-a-bars {
+	background-image: url('images/icon-menu-bars.png');
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border-radius: 0px;
+	width: 18px;
+	height: 18px;
+	box-shadow: none;
+	}
+	
+#acceuil div[data-role="header"] .ui-icon-a-gear {
+	background-image: url('images/icon-menu-gear.png');
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border-radius: 0px;
+	width: 18px;
+	height: 18px;
+	box-shadow: none;
+	}
+
+
+/* subheader */
+/* part: subheader */
+#acceuil .subheader {
+	/* some code */
+	}
+
+
+
+/* content */
+/* part: content */
+#acceuil div[data-role="content"] {
+	/* some rules */
+	}
+
+
+
+/* customize listview */
+#acceuil div[data-role="content"] .ui-li {
+	}
+	#acceuil .ui-li .ui-btn-inner {
+		border-color: rgba(255, 255, 255, .1);
+		border-bottom: rgba(0, 0, 0, .3) solid 1px;
+		}
+	#acceuil .ui-li:nth-child(1) .ui-btn-inner {
+		border-color: rgba(255, 255, 255, .0);
+		}
+
+#acceuil div[data-role="content"] .ui-li-heading {
+	font-size: 20px;
+	line-height: 170%;
+	font-weight: normal;
+	margin-left: -25px;
+	font-family: helvetica, arial, sans-serif;
+	letter-spacing: 1px;
+	}
+	#acceuil div[data-role="content"] .ui-btn-up-l, 
+	#acceuil div[data-role="content"] .ui-btn-hover-l {
+		background-color: #303030;
+		color: #eee;
+		}
+		
+	#acceuil div[data-role="content"] .ui-btn-up-l:nth-child(even) {
+		background-color: #363636;
+		}
+	
+	#acceuil div[data-role="content"] .ui-btn-hover-l:nth-child(odd),
+	#acceuil div[data-role="content"] .ui-btn-hover-l:nth-child(even) {
+		background-color: #444;
+		}
+		
+	#acceuil div[data-role="content"] .ui-btn-up-l .ui-link-inherit,
+	#acceuil div[data-role="content"] .ui-btn-hover-l .ui-li-heading,
+	#acceuil div[data-role="content"] .ui-btn-hover-l .ui-li-heading {
+		color: #fff;
+		text-shadow: none;
+		}
+		
+		
+		
+/* add color to the left side of the list items */
+
+#acceuil div[data-role="content"] .ui-li img {
+	border-left-width: 8px;
+	border-left-style: solid;
+	}
+
+#acceuil div[data-role="content"] .ui-li:nth-child(1) img { border-left-color: #e35627; }
+#acceuil div[data-role="content"] .ui-li:nth-child(2) img { border-left-color: #dd2572; }
+#acceuil div[data-role="content"] .ui-li:nth-child(3) img { border-left-color: #1197bc; }
+#acceuil div[data-role="content"] .ui-li:nth-child(4) img { border-left-color: #0ca958; }
+#acceuil div[data-role="content"] .ui-li:nth-child(5) img { border-left-color: #e35627; }
+
+
+
+		
+/* customize fonts */	
+#acceuil div[data-role="content"] .ui-select .ui-btn-up-a, 
+#acceuil div[data-role="content"] .ui-select .ui-btn-hover-a, 
+#acceuil div[data-role="content"] .ui-select .ui-btn-down-a {
+	font-family: "arial rounded mt bold", helvetica, arial, sans-serif;
+	}
+	
+	
+/* customize the listview right-arrow */
+#acceuil div[data-role="content"] .ui-icon-arrow-r-black {
+	background-image: url(images/arrow-r-black.png);
+	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; 
+	border-radius: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px;
+	background-color: rgba(0, 0, 0, 0);
+	}
+
+
+
+/* footer */
+/* part: footer */
+#acceuil div[data-role="footer"] {
+	}
+
+
+#acceuil div[data-role="footer"] .ui-btn {
+	border: 0 none;
+	background: transparent;
+	}
+	
+
+#acceuil div[data-role="footer"] .ui-btn-active {
+  	background: none rgba(255,255,255,0.14);
+  	-webkit-border-radius: 4px !important; -moz-border-radius: 4px !important; border-radius: 4px !important;
+	background: -webkit-gradient(linear, left top, left bottom, 
+   	color-stop(0%,  rgba(255,255,255,.1)),
+   	color-stop(50%,  rgba(255,255,255,.12)),
+   	color-stop(52%,  rgba(255,255,255,.05)),
+   	color-stop(100%,  rgba(255,255,255,.00)));
+	}
+		
+		
+#acceuil div[data-role="footer"] .ui-btn-inner {
+	border-color: #434343;
+	padding-top: 30px;
+	padding-bottom: 1px;
+	}
+#acceuil div[data-role="footer"] .ui-btn-text {
+	font-size: 11px;
+	text-shadow: 0 none;
+	}
+
+
+#acceuil div[data-role="footer"] [class^="ui-icon-"],
+#acceuil div[data-role="footer"] [class*=" ui-icon-"] {
+	background-color: transparent;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+	left: 0px;
+	margin-left: 0px;
+	width: 100%;
+	}
+    
+    
+/* active-state */
+#acceuil div[data-role="footer"] .ui-btn-active .ui-btn-text,
+#acceuil div[data-role="footer"] .ui-btn-active .ui-icon-doc, 
+#acceuil div[data-role="footer"] .ui-btn-active .ui-icon-export, 
+#acceuil div[data-role="footer"] .ui-btn-active .ui-icon-basket,
+#acceuil div[data-role="footer"] .ui-btn-active .ui-icon-th-list ,
+#acceuil div[data-role="footer"] .ui-btn-active .ui-icon-rss  {
+	color: rgba(135,224,253, 1);
+	text-shadow: 0px 1px 2px rgba(0,0,0,.5);
+	}
+    
+
