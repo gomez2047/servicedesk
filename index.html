@@ -32,40 +32,16 @@
  
     <!-- Fix for scrolling on iOS prior to iOS 6 -->
     <style type="text/css">
-        body {
+       body {
+            /* Setting body margins to 0 to have proper positioning of #container div */
             margin: 0;
         }
- 
-        div#container {
+
+            /* #container div with absolute position and 100% width and height so it takes up whole window */
+        #container {
             position: absolute;
             width: 100%;
-            top: 0;
-            bottom: 0;
-        }
- 
-        div[data-role="header"] {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
- 
-        div[data-role="content"] {
-            position: absolute;
-            top: 41px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
- 
-        .scrollable {
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
- 
-            /* iOS specific fix, don't use it on Android devices */
-        .scrollable > * {
-            -webkit-transform: translateZ(0px);
+            height: 100%;
         }
     </style>
  
@@ -80,6 +56,15 @@
             $.mobile.defaultPageTransition = 'slide';
  
         });
+		$(document).ready(function() 
+{ 
+
+    $.mobile.defaultPageTransition = "none"
+    $.mobile.defaultDialogTransition = 'none';
+    $.mobile.useFastClick = true; 
+    $.mobile.touchOverflowEnabled = true;
+
+});
     </script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
  
@@ -106,7 +91,7 @@
 </script>
     </head>
     <body>
-
+<div id="container">
 
 		<!-- page -->
 		<div id="acceuil" data-role="page" data-palette="">
@@ -320,5 +305,6 @@ data-direction="reverse">home</a>
 			</div><!-- /footer -->
 
 		</div><!-- /page -->
+		</div>
     </body>
 </html>
