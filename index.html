@@ -87,7 +87,8 @@ $.mobile.defaultPageTransition = 'none';
 						
 		            </li> 
 		            <li data-icon="arrow-r-black">
-		            	<a>
+		            			            	<a href="#request" data-transition="flip">
+
 			            	<img alt="News" src="resources/images/news.png">
 			                <h1>Request</h1>
 		            	</a>
@@ -141,6 +142,60 @@ data-direction="reverse">home</a>
 	<div data-role="content">	
 		<p>I'm first in the source order so I'm shown as the page.</p>		
 		<p>View internal page called <a href="#bar">bar</a></p>	
+	</div><!-- /content -->
+
+	<!-- footer -->
+			<div data-role="footer" data-position="fixed">
+				<!-- navbar 
+	            <div data-role="navbar">
+	                <ul>
+	                    <li><a href="#" data-icon="doc">News</a></li>
+	                    <li><a href="#" data-icon="basket" class="ui-btn-active">Call</a></li>
+	                    <li><a href="#" data-icon="rss">RSS</a></li>
+	                    <li><a href="#" data-icon="th-list">My Requests</a></li>
+	                    <li><a href="#" data-icon="export">Email</a></li>
+	                </ul>
+	            </div> /navbar -->
+			</div><!-- /footer -->
+</div><!-- /page -->
+
+		<div data-role="page" id="request">
+
+	<div data-role="header">
+		<h1>Request</h1>
+		<a href="#" data-role="button" data-rel="back" 
+data-direction="reverse">home</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<form action="/contact.php" method="post" id="sendEmail">
+						<div data-role="fieldcontain"> 
+							<label for="emailFrom">Email: *</label>
+							<input type="text" name="emailFrom" id="emailFrom" value="" />
+						</div>
+						<div data-role="fieldcontain">
+							<label for="subject">Name: *</label>
+							<input type="text" name="subject" id="subject" value="" />         
+						</div>
+						<div data-role="fieldcontain">
+						 <label for="activity" class="select">Activity:</label>
+						<select name='activity' size='1' onChange='updacttype()'><option style='color: #FF0000' value='{select}'>{select}</option><option value='BCP'>BCP</option><option value='Business Apps'>Business Apps</option><option value='CTS Projects'>CTS Projects</option><option value='Desktop Hardware'>Desktop Hardware</option><option value='Desktop Services'>Desktop Services</option><option value='Desktop Software'>Desktop Software</option><option value='FO Major Incident'>FO Major Incident</option><option value='HQ Major Incident'>HQ Major Incident</option><option value='InternetEveryWhere'>InternetEveryWhere</option><option value='Intranet Application'>Intranet Application</option><option value='Loan Hardware'>Loan Hardware</option><option value='Network'>Network</option><option value='Purchasing'>Purchasing</option><option value='Security Admin'>Security Admin</option><option value='Telecom Support'>Telecom Support</option><option value='test'>test</option></select></td><td width='10%' valign='middle' align='left'><font face='Trebuchet MS' size='2' color='#000000'>Activity Type :&nbsp;</font></td><td width='55%' valign='middle' align='left'><select name='extra2' size='1'><option style='color: #FF0000' value='{select}'>{select}</option><option value='Incident'>Incident</option><option value='Info'>Info</option><option value='RFS - Add'>RFS - Add</option><option value='RFS - Change'>RFS - Change</option><option value='RFS - Install'>RFS - Install</option><option value='RFS - Move'>RFS - Move</option><option value='Undefined'>Undefined</option></select>       </div>
+		<div data-role="fieldcontain">
+						 <label for="CallType" class="select">Call Type:</label>
+						<select name="CallType" size="1" onChange="updcalltype()">
+					   <option value="{select type}" style='color: #FF0000'>{select type}</option>
+						  <option value='ATRS'>ATRS</option><option value='Audit'>Audit</option><option value='Autres'>Autres</option><option value='Autres Web'>Autres Web</option><option value='BEETEXT FLOW'>BEETEXT FLOW</option><option value='Citrix'>Citrix</option><option value='DACON'>DACON</option><option value='DARMS'>DARMS</option><option value='DTS'>DTS</option><option value='Eviews'>Eviews</option><option value='HEAT'>HEAT</option><option value='Historical data'>Historical data</option><option value='HR'>HR</option><option value='INET'>INET</option><option value='INFOSERV'>INFOSERV</option><option value='Intranet'>Intranet</option><option value='IPCC'>IPCC</option><option value='MULTITRANS'>MULTITRANS</option><option value='Rapid Post'>Rapid Post</option><option value='SAP'>SAP</option><option value='Server'>Server</option><option value='Site Help Desk'>Site Help Desk</option><option value='SRAS'>SRAS</option><option value='STATA'>STATA</option><option value='Swift'>Swift</option><option value='Treasury Apps'>Treasury Apps</option> 
+        </select>       </div>
+							<div data-role="fieldcontain">
+							<label for="message">Message: *</label>
+							<textarea name="message" id="message"></textarea>         
+						</div>
+							<div data-role="fieldcontain" class="formbutton">
+							<button type="submit" id="submit" data-theme="a">Send</button>
+							<input type="hidden" name="submitted" id="submitted" value="true" data-theme="f" />
+						</div>
+						<p>* All fields are required</p>
+					</form>
 	</div><!-- /content -->
 
 	<!-- footer -->
