@@ -59,6 +59,31 @@
 $(document).bind("mobileinit", function () {
 $.mobile.defaultPageTransition = 'none';
 });
+$(".submit").click(function () {
+    var email_title = $(this).find(".subject").html();
+    window.location.href = "mailto:gomez2047@gmail.com?subject=" + email_title;
+});
+function envoi(){
+    var Importance = $("input[type=radio]:checked").attr("value");
+    var Nom = $("input[name=emailFrom]").attr("value");
+    var Sujet = $("input[name=subject]").attr("value");
+    var Message = $("input[name=message]").attr("value");
+ 
+    if ((Nom == "") || (Sujet == "") || (Message == "")){
+        alert("Tous les champs requis n'ont pas été spécifiés")
+    }
+    else{
+        if (confirm("Etes-vous sûr d'envoyer ce message ?")) {
+ 
+            var url="mailto:"+encodeURIComponent("gomez2047@gmail.com")
+                +"?subject="+encodeURIComponent(Sujet)
+                +"&body="+encodeURIComponent(Message);
+ 
+            document.location=url;
+        }
+    }
+ 
+}
 </script>
     </head>
     <body>
@@ -195,7 +220,7 @@ data-direction="reverse">home</a>
 							<textarea name="message" id="message"></textarea>         
 						</div>
 							<div data-role="fieldcontain" class="formbutton">
-							<button type="submit" id="submit" data-theme="a">Send</button>
+							<button type="submit" id="submit" data-theme="a" onClick="envoi()" >Send</button>
 							<input type="hidden" name="submitted" id="submitted" value="true" data-theme="f" />
 						</div>
 						<p>* All fields are required</p>
