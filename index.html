@@ -85,6 +85,8 @@ function envoi(){
  
 }
 </script>
+ <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+ <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
     </head>
     <body>
 <div id="container">
@@ -119,7 +121,8 @@ function envoi(){
 		            	</a>
 		            </li>  
 		            <li data-icon="arrow-r-black">
-		            	<a>
+		            	
+		<a href="#faqs" data-transition="slide">
 			            	<img alt="Gallery" src="resources/images/gallery.png">
 			                <h1>FAQs</h1>
 		            	</a>
@@ -208,7 +211,7 @@ data-direction="reverse">home</a>
 						</div>
 						<div data-role="fieldcontain">
 						<label for="activitytype" >Activity Type :</label>
-<select id="activitytype" name='extra2' size='1'><option style='color: #FF0000' value='{select}'>{select}</option><option value='Incident'>Incident</option><option value='Info'>Info</option><option value='RFS - Add'>RFS - Add</option><option value='RFS - Change'>RFS - Change</option><option value='RFS - Install'>RFS - Install</option><option value='RFS - Move'>RFS - Move</option><option value='Undefined'>Undefined</option></select>       </div>
+<select id="activitytype" name='extra2' size='1'><option style='color: #FF0000' value='{select}'>{select}</option><option value='Incident'>Incident</option><option value='Info'>Info</option><option value='RFS - Add'>RFS - Add</option><option value='RFS - Change'>RFS - Change</option><option value='RFS - Install'>RFS - Install</option><option value='RFS - Move'>RFS - Move</option><option value='Undefined'>Undefined</option></select>      
 		</div><div data-role="fieldcontain">
 						 <label for="CallType" class="select">Call Type:</label>
 						<select name="CallType" id="CallType" size="1" onChange="updcalltype()">
@@ -253,13 +256,112 @@ data-direction="reverse">home</a>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>I'm first in the source order so I'm shown as the page.</p>		
-		<p><a href="#foo" >Back to foo</a></p>	
+			<div data-role="collapsible-set" data-theme="a" data-content-theme="f">
+				
+				<div data-role="collapsible">
+					<h2>IT Survey</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+					    <li><a href="#" onClick="window.plugins.childBrowser.showWebPage('http://afdbipcc2/sitehelpdesk/admin/SurveyRep_Summary.asp');">Survey Result</a></li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h2> Microsoft Resources</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				
+				<div data-role="collapsible">
+					<h2> PC/Server Support </h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h2>Peripheral Support</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h2>Printer Support</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				
+				<div data-role="collapsible">
+					<h2>SLA Dashboard</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h2>Software Support</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h2>User Self Help</h2>
+					<ul data-role="listview" data-filter="true" data-filter-theme="c" data-divider-theme="d">
+						<li><a href="index.html">Adam Kinkaid</a></li>
+						<li><a href="index.html">Alex Wickerham</a></li>
+						<li><a href="index.html">Avery Johnson</a></li>
+						<li><a href="index.html">Bob Cabot</a></li>
+						<li><a href="index.html">Caleb Booth</a></li>
+					</ul>
+				</div>
+				
+			<!--	<div data-role="collapsible">
+					<h2>Texte formaté</h2>
+					<ul data-role="listview" data-theme="d" data-divider-theme="d">
+						<li data-role="list-divider">Vendredi 8 octobre 2010 <span class="ui-li-count">2</span></li>
+						<li><a href="index.html">
+							<h3>Stephen Weber</h3>
+							</a><p><strong>Vous avez été invité à la réunion Filament Group à Boston, MA</strong></p>
+							<p>Hé Stephen, si vous êtes disponible demain à 10 heures, nous avons une réunion avec l'équipe jQuery.</p>
+							<p class="ui-li-aside"><strong>6:24</strong>PM</p>
+						</a></li>
+						<li><a href="index.html">
+							<h3>Equipe jQuery</h3>
+							</a><p><strong>Planning de la conférence de Boston</strong></p>
+							<p>Pour préparation de la prochaine conférence à Boston, nous avons besoin de commencer à rassembler une liste de sponsors et conférenciers.</p>
+							<p class="ui-li-aside"><strong>9:18</strong>AM</p>
+						</a></li>
+					</ul>
+				</div>-->
+			
+			</div>
 	</div><!-- /content -->
 
 	<!-- footer -->
 			<div data-role="footer" data-position="fixed">
-				<!-- navbar -->
+				<!-- navbar
 	            <div data-role="navbar">
 	                <ul>
 	                    <li><a href="#" data-icon="doc">News</a></li>
@@ -268,79 +370,190 @@ data-direction="reverse">home</a>
 	                    <li><a href="#" data-icon="th-list">My Requests</a></li>
 	                    <li><a href="#" data-icon="export">Email</a></li>
 	                </ul>
-	            </div><!-- /navbar -->
+	            </div>/navbar -->
 			</div><!-- /footer -->
 </div><!-- /page -->
 	<!-- page -->
-		<div id="tutorial" data-role="page" data-palette="">
-			<!-- header -->
-            <div data-role="header" data-position="fixed">
-			<a href="#" data-role="button" data-rel="back" 
+			<div data-role="page" id="faqs">
+
+	<div data-role="header">
+		<h1>FAQS</h1>
+		<a href="#" data-role="button" data-rel="back" 
 data-direction="reverse">home</a>
-                <h1>Tutorial Section</h1>
-                <a href="#" data-role="button" data-theme="reset" class="ios back-button black">Back</a>
-            </div><!-- /header -->
-			<!-- subheader -->
-			<div class="subheader">
-               <form action="" method="get" name="search" class="search-form">
-				  <input class="search_box" id="query" name="query" placeholder="Search..." data-mini="true" type="search">
-				</form>
-			</div><!-- /subheader -->
-			<!-- content -->
-			<div data-role="content" data-theme="a">
-		        <ul data-role="listview" data-inset="true">
-		        	<li><a href="#">
-		            	<img src="resources/images/apple.png">
-		            	<h2>iOS 6.1</h2>
-		                <p>Apple released iOS 6.1</p>
-		                <p class="ui-li-aside">iOS</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<img src="resources/images/blackberry_10.png">
-		            	<h2>BlackBerry 10</h2>
-		                <p>BlackBerry launched the Z10 and Q10 with the new BB10 OS</p>
-		                <p class="ui-li-aside">BlackBerry</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<img src="resources/images/lumia_800.png">
-		            	<h2>WP 7.8</h2>
-		                <p>Nokia rolls out WP 7.8 to Lumia 800</p>
-		                <p class="ui-li-aside">Windows Phone</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<img src="resources/images/galaxy_express.png">
-		            	<h2>Galaxy</h2>
-		                <p>New Samsung Galaxy Express</p>
-		                <p class="ui-li-aside">Samsung</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<img src="resources/images/nexus_7.png">
-		            	<h2>Nexus 7</h2>
-		                <p>Rumours about new full HD Nexus 7</p>
-		                <p class="ui-li-aside">Android</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<img src="resources/images/firefox_os.png">
-		            	<h2>Firefox OS</h2>
-		                <p>ZTE to launch Firefox OS smartphone at MWC</p>
-		                <p class="ui-li-aside">Firefox</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<img src="resources/images/tizen.png">
-		            	<h2>Tizen</h2>
-		                <p>First Samsung phones with Tizen can be expected in 2013</p>
-		                <p class="ui-li-aside">Tizen</p>
-		            </a></li>
-		        	<li><a href="#">
-		            	<h2>Symbian</h2>
-		                <p>Nokia confirms the end of Symbian</p>
-		                <p class="ui-li-aside">Symbian</p>
-		            </a></li>
-		        </ul>
-			</div><!-- /content -->
-			<!-- footer -->
-			<div data-role="footer" >
-				<!-- navbar -->
+	</div><!-- /header -->
+
+	<div data-role="content">	
+					        <ul data-role="listview" data-inset="false" data-theme="l" class="record-list" data-transition="slide" data-add-back-btn="true">     
+
+			<li >
+				<h3>Archiving in Outlook 2010</h3>
+				<p>Tous vos favoris de alligator à zèbre.</p>
+			
+				<ul>
+					<li><div>Animaux de compagnie</div>
+						<span class="ui-li-count">6</span>
+						<ul>
+							<li><a href="index.html">Canaris</a></li>
+							<li><a href="index.html">Chat</a></li>
+							<li><a href="index.html">Chien</a></li>
+							<li><a href="index.html">Gerbille</a></li>
+							<li><a href="index.html">Iguane</a></li>
+							<li><a href="index.html">Souris</a></li>
+						</ul>
+					</li>
+					<li><div>Animaux de la ferme</div>
+						<p class="ui-li-count">6</p>
+						<ul>
+							<li><a href="index.html">Poulet</a></li>
+							<li><a href="index.html">Vache</a></li>
+							<li><a href="index.html">Canard</a></li>
+							<li><a href="index.html">Cheval</a></li>
+							<li><a href="index.html">Cochon</a></li>
+							<li><a href="index.html">Mouton</a></li>
+						</ul>
+					</li>
+					<li><div>Animaux sauvages</div>
+						<p class="ui-li-count">18</p>
+						<ul>
+							<li><a href="index.html">Oryctérope du Cap</a></li>
+							<li><a href="index.html">Alligator</a></li>
+							<li><a href="index.html">Fourmi</a></li>
+							<li><a href="index.html">Ours</a></li>
+							<li><a href="index.html">Castor</a></li>
+							<li><a href="index.html">Puma</a></li>
+							<li><a href="index.html">Dingo</a></li>
+							<li><a href="index.html">Aigle</a></li>
+							<li><a href="index.html">Éléphant</a></li>
+							<li><a href="index.html">Furet</a></li>
+							<li><a href="index.html">Grenouille</a></li>
+							<li><a href="index.html">Girafe</a></li>
+							<li><a href="index.html">Lion</a></li>
+							<li><a href="index.html">Singe</a></li>
+							<li><a href="index.html">Panda</a></li>
+							<li><a href="index.html">Ours polaire</a></li>
+							<li><a href="index.html">Tigre</a></li>
+							<li><a href="index.html">Zèbre</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+
+				<h3>Couleurs</h3>
+				<p>Les couleurs fraîches de l'arc-en-ciel.</p>
+	
+				<ul>
+					<li><a href="index.html">Bleu</a></li>
+					<li><a href="index.html">Vert</a></li>
+					<li><a href="index.html">Orange</a></li>
+					<li><a href="index.html">Pourpre</a></li>
+					<li><a href="index.html">Rouge</a></li>
+					<li><a href="index.html">Jaune</a></li>
+					<li><a href="index.html">Violet</a></li>
+				</ul>
+			</li>
+			<li>
+				<h3>Véhicules</h3>
+				<p>Tout : des voitures aux avions.</p>
+				
+				<ul>
+					<li><div>Voitures</div>
+						<span class="ui-li-count">22</span>
+						<ul>
+							<li><a href="index.html">Acura</a></li>
+							<li><a href="index.html">Audi</a></li>
+							<li><a href="index.html">BMW</a></li>
+							<li><a href="index.html">Cadillac</a></li>
+							<li><a href="index.html">Chrysler</a></li>
+							<li><a href="index.html">Dodge</a></li>
+							<li><a href="index.html">Ferrari</a></li>
+							<li><a href="index.html">Ford</a></li>
+							<li><a href="index.html">GMC</a></li>
+							<li><a href="index.html">Honda</a></li>
+							<li><a href="index.html">Hyundai</a></li>
+							<li><a href="index.html">Infiniti</a></li>
+							<li><a href="index.html">Jeep</a></li>
+							<li><a href="index.html">Kia</a></li>
+							<li><a href="index.html">Lexus</a></li>
+							<li><a href="index.html">Mini</a></li>
+							<li><a href="index.html">Nissan</a></li>
+							<li><a href="index.html">Porsche</a></li>
+							<li><a href="index.html">Subaru</a></li>
+							<li><a href="index.html">Toyota</a></li>
+							<li><a href="index.html">Volkswagon</a></li>
+							<li><a href="index.html">Volvo</a></li>
+						</ul>
+					</li>
+					<li><div>Avions</div>
+						<span class="ui-li-count">7</span>
+						<ul>
+							<li><a href="index.html">Boeing</a></li>
+							<li><a href="index.html">Cessna</a></li>
+							<li><a href="index.html">Derringer</a></li>
+							<li><a href="index.html">Embraer</a></li>
+							<li><a href="index.html">Gulfstream</a></li>
+							<li><a href="index.html">Piper Aircraft</a></li>
+							<li><a href="index.html">Raytheon</a></li>
+						</ul>
+					</li>
+					<li><div>Construction</div>
+						<span class="ui-li-count">3</span>
+						<ul>
+							<li><a href="index.html">Caterpillar</a></li>
+							<li><a href="index.html">Ford</a></li>
+							<li><a href="index.html">John Deere</a></li>
+
+						</ul>
+					</li>				
+				</ul>
+			</li>
+		</ul>
+		</div><!--/content-primary -->		
+
+		<div class="content-secondary">
+
+			<div data-role="collapsible" data-collapsed="true" data-theme="f" data-content-theme="f">
+
+					<h3>Aussi dans cette rubrique</h3>
+
+					<ul data-role="listview" data-theme="c" data-dividertheme="d">
+
+						<li data-role="list-divider">Listes</li>
+						<li><a href="docs-lists.html">Listes de bases &amp; API</a></li>
+						<li><a href="lists-ul.html">Liste chainée de base</a></li>
+						<li data-theme="a"><a href="lists-nested.html">Liste imbriquée</a></li>
+						<li><a href="lists-ol.html">Liste numérotée</a></li>
+
+						<li><a href="lists-split.html">Liste de bouton séparé</a></li>	
+						<li><a href="lists-divider.html">Séparateurs de liste</a></li>
+						<li><a href="lists-autodividers.html">Autodividers</a></li>
+						<li><a href="lists-count.html">Bulle compteur</a></li>
+						<li><a href="lists-thumbnails.html">Miniatures</a></li>
+						<li><a href="lists-icons.html">Icônes</a></li>
+						<li><a href="lists-formatting.html">Liste formatée</a></li>
+						<li><a href="lists-inset.html">Encart avec listes stylées</a></li>
+						
+						<li><a href="lists-search.html">Barre de filtre de recherche</a></li>
+						<li><a href="lists-search-inset.html">Encart barre de filtre de recherche</a></li>
+						<li><a href="lists-search-with-dividers.html">Filtre de recherche avec séparateurs</a></li>
+						<li><a href="lists-search-filtertext.html">Filtre de recherche des données cachées</a></li>
+
+						<li><a href="lists-readonly.html">Listes en lecture seule</a></li>
+						<li><a href="lists-readonly-inset.html">Encart listes en lecture seule</a></li>
+						<li><a href="lists-forms.html">Listes avec formulaires</a></li>
+						<li><a href="lists-forms-inset.html">Encart listes avec formulaires</a></li>
+
+						<li><a href="lists-collapsible.html">Listes pliables</a></li>
+						
+						<li><a href="lists-performance.html" data-transition="none">Test de performance de liste</a></li>
+						<li><a href="lists-themes.html">Liste thématisée</a></li>
+
+					</ul>
+	</div><!-- /content -->
+
+	<!-- footer -->
+			<div data-role="footer" data-position="fixed">
+				<!-- navbar 
 	            <div data-role="navbar">
 	                <ul>
 	                    <li><a href="#" data-icon="doc">News</a></li>
@@ -349,8 +562,9 @@ data-direction="reverse">home</a>
 	                    <li><a href="#" data-icon="th-list">My Requests</a></li>
 	                    <li><a href="#" data-icon="export">Email</a></li>
 	                </ul>
-	            </div><!-- /navbar -->
+	            </div> /navbar -->
 			</div><!-- /footer -->
+</div><!-- /page -->
 
 		</div><!-- /page -->
 		</div>

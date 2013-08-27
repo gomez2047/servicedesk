@@ -99,7 +99,15 @@
 	#acceuil .ui-li:nth-child(1) .ui-btn-inner {
 		border-color: rgba(255, 255, 255, .0);
 		}
-
+		div[data-role="content"] .ui-li {
+	}
+	.ui-li .ui-btn-inner {
+		border-color: rgba(255, 255, 255, .1);
+		border-bottom: rgba(0, 0, 0, .3) solid 1px;
+		}
+	.ui-li:nth-child(1) .ui-btn-inner {
+		border-color: rgba(255, 255, 255, .0);
+		}
 #acceuil div[data-role="content"] .ui-li-heading {
 	font-size: 20px;
 	line-height: 170%;
