@@ -19,6 +19,7 @@
 	<author email="h.marrakchi@afdb.org" href="http://www.afdb.org"> MARRAKCHI Hatem </author>
 
 	<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
+	<access origin="http://10.1.138.155" />
 	<access origin="*"/> <!-- allow local pages -->
 
 <preference name="target-device" value="universal" />
