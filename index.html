@@ -85,10 +85,35 @@ function envoi(){
  
 }
 </script>
- <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
  <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+ <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.8.1.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        document.addEventListener("offline", onOffline, false);
+    }
+
+    // Handle the offline event
+    //
+    function onOffline() {
+	alert("We are unable to process your request at this time, please double check your connection and try again later.!");
+    }
+
+    </script>
     </head>
-    <body>
+    <body onload="onLoad()">
 <div id="container">
 
 		<!-- page -->
@@ -153,7 +178,7 @@ function envoi(){
 	                    <li><a href="#" data-icon="basket" class="ui-btn-active">Call</a></li>
 	                    <li><a href="#" data-icon="rss">RSS</a></li>
 	                    <li><a href="#" data-icon="th-list">My Requests</a></li>
-						<li><a href="#" onclick="window.plugins.childBrowser.showWebPage('http://10.1.138.155/cometchat/login.php',{showLocationBar:true});" data-role="button" data-inline="false" data-icon="export">Chat</a></li>
+						<li><a href="#" onclick="window.plugins.childBrowser.openExternal('http://10.1.138.155/cometchat/login.php');" data-role="button" data-inline="false" data-icon="export">Chat</a></li>
 
 						
 	                </ul>
