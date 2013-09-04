@@ -93,21 +93,35 @@ function envoi(){
  
 }
 </script>
-		<link href="styles/main.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" charset="utf-8" src="cordova.android.js"></script>
-		<script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
             <script type="text/javascript" charset="utf-8">
                 
-                var childBrowser;
-                function onBodyLoad()
-                {
-                    document.addEventListener("deviceready",onDeviceReady,false);
-                }
-                
+                // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.8.1.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        document.addEventListener("offline", onOffline, false);
+    }
+
+    // Handle the offline event
+    //
+    function onOffline() {
+	alert("We are unable to process your request at this time, please double check your connection and try again later.!");
+    }
+
                 </script>
  
     </head>
-    <body onload="onBodyLoad()">
+    <body onload="onLoad()">
 <div id="container">
 
 		<!-- page -->
@@ -278,7 +292,7 @@ data-direction="reverse">home</a>
 
 	<div data-role="content">	
 <div class="action-area ch80">
-				<button class="button dh" id="openLocal">Open embedded Image resource</button>
+				<a href="#" onClick="window.open('http://wwww.google.com', '_blank');">Open embedded Image resource</a>
 				<button class="button dh" id="openExternalInAppBrowser">Open external page with InAppBrowser</button>
 				<button class="button dh" id="openPDF">Open embedded PDF (iOS only)</button>
 				<button class="button dh" id="openExternalPDF">Open online PDF</button>
