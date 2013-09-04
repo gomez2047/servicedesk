@@ -93,8 +93,9 @@ function envoi(){
  
 }
 </script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-            <script type="text/javascript" charset="utf-8" src="ChildBrowser.js"></script>
+		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" charset="utf-8" src="cordova.android.js"></script>
+		<script type="text/javascript" charset="utf-8" src="scripts/main.js"></script>
             <script type="text/javascript" charset="utf-8">
                 
                 var childBrowser;
@@ -102,24 +103,7 @@ function envoi(){
                 {
                     document.addEventListener("deviceready",onDeviceReady,false);
                 }
-                /* When this function is called, PhoneGap has been initialized and is ready to roll */
-                function onDeviceReady()
-                {
-                    phoneGapReady.innerHTML = "PhoneGap is Ready";
-                    childBrowser = ChildBrowser.install();
-                }
-                function openChildBrowser(url)
-                {
-                    try {
-                        //both of these should work...
-                        window.plugins.childBrowser.showWebPage(url);
-                      //  childBrowser.showWebPage(url);
-                    }
-                    catch (err)
-                    {
-                        alert(url+err);
-                    }
-                }
+                
                 </script>
  
     </head>
@@ -293,30 +277,13 @@ data-direction="reverse">home</a>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-  <DIV class="phoneGapAPI">
-            
-            <TABLE>
-                <TR>
-                    <TD>
-                        <button onclick="openChildBrowser('http://www.google.com');">Open Google</button> <br>
-                    </TD>
-                </TR>
-                <TR>
-                    <TD>
-                        <button onclick="openChildBrowser('childBrowserTest.html');">Open Local Html File</button> <br>
-                    </TD>
-                </TR>
-                
-                <TR>
-                    <TD id="results" >
-                        
-                    </TD>
-                </TR>
-                
-            </TABLE>
-        </DIV>
-        
-        <DIV id="phoneGapReady" class="phoneGapReady">waiting for PhoneGap to initialize....</DIV>
+<div class="action-area ch80">
+				<button class="button dh" id="openLocal">Open embedded Image resource</button>
+				<button class="button dh" id="openExternalInAppBrowser">Open external page with InAppBrowser</button>
+				<button class="button dh" id="openPDF">Open embedded PDF (iOS only)</button>
+				<button class="button dh" id="openExternalPDF">Open online PDF</button>
+				<button class="button dh" id="openExternalInSystemBrowser">Open in system browser.</button>
+			</div>
         
 			<div data-role="collapsible-set" data-theme="a" data-content-theme="f">
 				
