@@ -1,0 +1,22 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://jqueryui.com/ui/jquery-1.7.1.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#main").load('http://localhost/cometchat/login.php', function () {
+			$(this).trigger('create');
+			});
+        });
+    </script>
+</head>
+
+<body>
+    <div data-role="content">
+        <div id="main"></div>Main Page</div>
+</body>
