@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+ <!--
+/**
+ * Appcropolis Template: acceuil 
+ * @copy Appcropolis LLC (c) 2011-2013. All rights reserved.
+ * @author gomez2047 (support@appcropolis.com)
+ * @date 2013-07-22
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+ * SOFTWARE.
+ *
+ * License and legal information: 
+ *
+ * http://appcropolis.com/license/
+ * http://appcropolis.com/legal/
+ * http://appcropolis.com/privacy/
+ */ -->
+<html>
+    <head>
+        <title>acceuil</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scaleable=no">
+
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<script src="vendors/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
+	 <!-- jQuery Mobile styles -->
+    <link rel="stylesheet" href="styles/jquery.mobile-1.2.0.css" />
+ 
+    <!-- Fix for scrolling on iOS prior to iOS 6 -->
+    <style type="text/css">
+       body {
+            /* Setting body margins to 0 to have proper positioning of #container div */
+            margin: 0;
+        }
+
+            /* #container div with absolute position and 100% width and height so it takes up whole window */
+        #container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+		.scrollable {
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+ 
+            /* iOS specific fix, don't use it on Android devices */
+        .scrollable > * {
+            -webkit-transform: translateZ(0px);
+        }
+ html,body{overflow-y:hidden}
+    .frame {
+        height: 100% ;
+        width: 100% ;
+        border: 0  ;
+        background-color: green ;
+    }
+
+    .content {
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+    }
+
+    .ui-content {
+        margin: 0   !important ;
+        padding: 0   !important ;
+        border: 0   !important ;
+        outline: 0   !important ;
+        height: 100%  ;
+        overflow: hidden  ;
+    }
+    </style>
+ 
+    
+    <script src="vendors/jqm/jquery.mobile-1.2.0.js"></script>
+ 
+		<link rel="stylesheet" href="vendors/appcropolis-reset/app-reset.css"/>
+		<link rel="stylesheet" href="vendors/appcropolis-icons-set-a/icons-set-a.css"/>
+		<link rel="stylesheet" href="resources/css/acceuil.css" />
+        <script src="resources/js/acceuil.js" type="text/javascript"></script>
+		<script type="text/javascript">
+$(document).bind("mobileinit", function () {
+$.mobile.defaultPageTransition = 'none';
+});
+$(".submit").click(function () {
+    var email_title = $(this).find(".subject").html();
+    window.location.href = "mailto:gomez2047@gmail.com?subject=" + email_title;
+});
+function envoi(){
+    var Importance = $("input[type=radio]:checked").attr("value");
+    var Nom = $("input[name=emailFrom]").attr("value");
+    var Sujet = $("input[name=subject]").attr("value");
+    var Message = $("input[name=message]").attr("value");
+ 
+    if ((Nom == "") || (Sujet == "") || (Message == "")){
+        alert("Tous les champs requis n'ont pas été spécifiés")
+    }
+    else{
+        if (confirm("Etes-vous sûr d'envoyer ce message ?")) {
+ 
+            var url="mailto:"+encodeURIComponent("gomez2047@gmail.com")
+                +"?subject="+encodeURIComponent(Sujet)
+                +"&body="+encodeURIComponent(Message);
+ 
+            document.location=url;
+        }
+    }
+ 
+}
+</script>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                
+                // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.8.1.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        document.addEventListener("offline", onOffline, false);
+    }
+
+    // Handle the offline event
+    //
+    function onOffline() {
+	alert("We are unable to process your request at this time, please double check your connection and try again later.!");
+    }
+var ref = null;
+function openInAppBrowserBlank(url)
+{
+    try {
+ref = window.open(encodeURI(url),'_blank','location=no'); //encode is needed if you want to send a variable with your link if not you can use ref = window.open(url,'_blank','location=no');
+         ref.addEventListener('loadstop', LoadStop);
+         ref.addEventListener('exit', Close);
+		  ref.addEventListener('exit', function(event) { alert(event.type); } );
+    }
+    catch (err)    
+    {
+        alert(err);
+    }
+}
+function LoadStop(event) {
+         if(event.url == "http://10.1.138.155/cometchat/logout.php"){
+                 console.log("fun load stop runs");
+             ref.close();
+         }    
+    }
+function Close(event) {
+         ref.removeEventListener('loadstop', LoadStop);
+         ref.removeEventListener('exit', Close);
+    } 
+	function goBack(){
+    var url = $.mobile.urlHistory.getPrev().url;
+	alert(url);
+    if (url === null || url == "") url = $.mobile.firstPage.attr("data-url");
+    $.mobile.changePage(url, "slide", true, true, true);
+}
+                </script>
+ 
+    </head>
+    <body>
+<div data-role="page" id="chat" data-close-btn="none">
+
+	<div data-role="header">
+		<h1>HelpDesk Instant Messaging</h1>
+			<a href="index.html" data-role="button" data-icon="home" data-transition="flip"
+>Home App</a>
+
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			<iframe src="http://10.1.138.155/cometchat/login.php" id="whatever" width="100%" height="100%" frameborder="0" allowfullscreen/>
+
+	</div><!-- /content -->
+
+	<!-- footer -->
+			<div data-role="footer" data-position="fixed">
+				<!-- navbar 
+	            <div data-role="navbar">
+	                <ul>
+	                    <li><a href="#" data-icon="doc">News</a></li>
+	                    <li><a href="#" data-icon="basket" class="ui-btn-active">Call</a></li>
+	                    <li><a href="#" data-icon="rss">RSS</a></li>
+	                    <li><a href="#" data-icon="th-list">My Requests</a></li>
+	                    <li><a href="#" data-icon="export">Email</a></li>
+	                </ul>
+	            </div> /navbar -->
+			</div><!-- /footer -->
+</div><!-- /page -->
+ </body>
+</html>
