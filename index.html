@@ -54,6 +54,28 @@
         .scrollable > * {
             -webkit-transform: translateZ(0px);
         }
+ html,body{overflow-y:hidden}
+    .frame {
+        height: 100% ;
+        width: 100% ;
+        border: 0  ;
+        background-color: green ;
+    }
+
+    .content {
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+    }
+
+    .ui-content {
+        margin: 0   !important ;
+        padding: 0   !important ;
+        border: 0   !important ;
+        outline: 0   !important ;
+        height: 100%  ;
+        overflow: hidden  ;
+    }
     </style>
  
     
@@ -124,6 +146,7 @@ function openInAppBrowserBlank(url)
 ref = window.open(encodeURI(url),'_blank','location=no'); //encode is needed if you want to send a variable with your link if not you can use ref = window.open(url,'_blank','location=no');
          ref.addEventListener('loadstop', LoadStop);
          ref.addEventListener('exit', Close);
+		  ref.addEventListener('exit', function(event) { alert(event.type); } );
     }
     catch (err)    
     {
@@ -131,8 +154,8 @@ ref = window.open(encodeURI(url),'_blank','location=no'); //encode is needed if 
     }
 }
 function LoadStop(event) {
-         if(event.url == "http://wwww.google.com"){
-             alert("fun load stop runs");
+         if(event.url == "http://10.1.138.155/cometchat/logout.php"){
+                 console.log("fun load stop runs");
              ref.close();
          }    
     }
@@ -140,6 +163,12 @@ function Close(event) {
          ref.removeEventListener('loadstop', LoadStop);
          ref.removeEventListener('exit', Close);
     } 
+	function goBack(){
+    var url = $.mobile.urlHistory.getPrev().url;
+	alert(url);
+    if (url === null || url == "") url = $.mobile.firstPage.attr("data-url");
+    $.mobile.changePage(url, "slide", true, true, true);
+}
                 </script>
  
     </head>
@@ -183,7 +212,7 @@ function Close(event) {
 		            	</a>
 		            </li> 
 		            <li data-icon="arrow-r-black">
-		            	<a href="http://10.1.138.155/cometchat/login.php" data-rel="dialog" re="external" data-transition="flip">
+		            	<a href="#chat"  data-transition="slide">
 			            	<img alt="Videos" src="resources/images/videos.png">
 			                <h1>tutorials</h1>
 		            	</a>
@@ -244,14 +273,40 @@ data-direction="reverse">home</a>
 			</div><!-- /footer -->
 </div><!-- /page -->
 
+<div data-role="dialog" id="chat" data-close-btn="none">
 
+	<div data-role="header">
+		<h1>HelpDesk Instant Messaging</h1>
+			<a href="" data-role="button" data-inline="true" data-icon="home" onclick="goBack()" data-transition="slide">Back</a>
+
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<iframe src="http://localhost/cometchat/login.php" id="whatever" width="100%" height="100%" frameborder="0" allowfullscreen/>
+	</div><!-- /content -->
+
+	<!-- footer -->
+			<div data-role="footer" data-position="fixed">
+				<!-- navbar 
+	            <div data-role="navbar">
+	                <ul>
+	                    <li><a href="#" data-icon="doc">News</a></li>
+	                    <li><a href="#" data-icon="basket" class="ui-btn-active">Call</a></li>
+	                    <li><a href="#" data-icon="rss">RSS</a></li>
+	                    <li><a href="#" data-icon="th-list">My Requests</a></li>
+	                    <li><a href="#" data-icon="export">Email</a></li>
+	                </ul>
+	            </div> /navbar -->
+			</div><!-- /footer -->
+</div><!-- /page -->
 
 		<div data-role="page" id="request">
 
 	<div data-role="header">
 		<h1>Request</h1>
-		<a href="#" data-role="button" data-rel="back" 
+<a href="#" data-role="button" data-rel="back" 
 data-direction="reverse">home</a>
+
 	</div><!-- /header -->
 
 	<div data-role="content">	
